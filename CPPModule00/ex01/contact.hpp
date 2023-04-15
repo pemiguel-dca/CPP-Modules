@@ -6,17 +6,17 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 12:51:10 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/15 18:54:58 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/15 23:24:04 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*The contact fields are: first name, last name, nickname, phone number, and
-darkest secret. A saved contact can’t have empty fields.*/
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-#include <cstring>
-#include <iostream>
+#include <cstring.h>
 #include <iostream>
 #include <iomanip>
+#include <limits>
 
 class Contact
 {
@@ -28,11 +28,15 @@ private:
 	std::string	phone_number;
 	size_t		index = 0;
 	std::string	get_input(std::string str) const;
-	void		_index(int i);
-
+	
 public:
+	void		print_contact(int index) const;
 	void		contact_fields();
+	void		atribute_index(int i);
+	void		view(int index) const;
+	std::string	w_dot(std::string str) const;
 	Contact();
 	~Contact();
 };
 
+#endif

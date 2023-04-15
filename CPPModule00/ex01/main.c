@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/15 12:48:32 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/15 23:00:03 by pemiguel         ###   ########.fr       */
+/*   Created: 2023/04/15 14:27:06 by pemiguel          #+#    #+#             */
+/*   Updated: 2023/04/15 23:02:41 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "phonebook.hpp"
 
-#include "contact.hpp"
-
-class Phonebook
+int	main(void)
 {
-private:
-	Contact	contacts[8];
-	
-public:
-	void	requirements() const;
-	void	add_contact();
-	int		read_index();
-	void	search();
-	Phonebook();
-	~Phonebook();
-};
+	Phonebook	contact;
+	std::string input = "";
 
-#endif
+	contact.requirements();
+	while (input.compare("EXIT"))
+	{
+		if (input.compare("ADD") == 0)
+			contact.add_contact();
+		else if (input.compare("SEARCH") == 0)
+			contact.search();
+		std::cout << "> " << std::flush;
+		std::cin >> input;
+	}
+}

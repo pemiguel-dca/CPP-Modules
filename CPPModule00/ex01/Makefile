@@ -2,9 +2,9 @@
 #	action
 
 FLAGS = -Wall -Wextra -Werror
-FILES = main.cpp contact.cpp #phonebook.cpp
-OBJS = $(FILES:.c=.o)
-NAME = phonebook
+FILES = main.cpp contact.cpp phonebook.cpp
+OBJS = $(FILES:.cpp=.o)
+NAME = gpo
 
 all : $(NAME)
 
@@ -16,5 +16,8 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+
+run: all clean
+	$(NAME)
 
 re: fclean all
