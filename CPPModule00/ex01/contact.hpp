@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 12:51:10 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/16 14:15:42 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/16 22:32:39 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ private:
 	std::string	nickname;
 	std::string	darkest_secret;
 	std::string	phone_number;
-	size_t		index;
+	int			index;
 	std::string	get_input(std::string str) const;
 
 public:

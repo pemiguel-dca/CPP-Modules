@@ -6,16 +6,11 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 18:47:49 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/16 14:41:23 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/16 22:32:31 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
-
-size_t	how_many_contacts(size_t i)
-{
-	return (i);
-}
 
 Phonebook::Phonebook()
 {
@@ -45,34 +40,33 @@ void	Phonebook::add_contact(void)
 	i += 1;
 }
 
-size_t		Phonebook::read_index(void)
+int		Phonebook::read_index(void)
 {
-	size_t	index = -1;
+	int	index = -1;
 
 	while (true)
 	{
 		std::cout << "Which contact would you like to see? " << std::flush;
 		std::cin >> index;
-		if (std::cin.good() && (index >= 0 && index <= 8))
+		if (std::cin.good() && (index > 0 && index <= 8))
 			break ;
-		else if (std::cin.eof())
-		{
-			std::cout << "EOF";
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-
-		}
 		else
-		{
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-			//std::cout << "Invalid index, try again." << std::endl;
-		}
+			std::cout << "Invalid contact, try again." << std::endl;
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');	
 	}
 	return (index);
 }
 
+void	Phonebook::view_contacts(void) const {
+	std::cout << "Available Contacts" << std::endl;
+	for (size_t i = 0; i < 8; i++)
+		this->contacts[i].view(i);
+	std::cout << std::endl;
+}
+
 void	Phonebook::search()
 {
-	this->contacts[this->read_index()].print_contact(this->read_index());
+	int i = this->read_index() - 1;
+	this->contacts[i].print_contact(i);
 }
