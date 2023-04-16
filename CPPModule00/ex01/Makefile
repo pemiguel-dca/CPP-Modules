@@ -1,7 +1,7 @@
 #target: dependencies
 #	action
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 FILES = main.cpp contact.cpp phonebook.cpp
 OBJS = $(FILES:.cpp=.o)
 NAME = gpo
@@ -9,7 +9,7 @@ NAME = gpo
 all : $(NAME)
 
 $(NAME): $(OBJS)
-	c++ $(FLAGS) $(OBJS) -o $(NAME)
+	c++ $(FLAGS) $(FILES) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)
@@ -18,6 +18,6 @@ fclean: clean
 	rm -f $(NAME)
 
 run: all clean
-	$(NAME)
+	./$(NAME)
 
 re: fclean all

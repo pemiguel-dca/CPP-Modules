@@ -6,14 +6,14 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 12:51:10 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/15 23:24:04 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/16 14:15:42 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
-# define CONTACT_HPP
+#define CONTACT_HPP
 
-#include <cstring.h>
+#include <cstring>
 #include <iostream>
 #include <iomanip>
 #include <limits>
@@ -26,9 +26,9 @@ private:
 	std::string	nickname;
 	std::string	darkest_secret;
 	std::string	phone_number;
-	size_t		index = 0;
+	size_t		index;
 	std::string	get_input(std::string str) const;
-	
+
 public:
 	void		print_contact(int index) const;
 	void		contact_fields();

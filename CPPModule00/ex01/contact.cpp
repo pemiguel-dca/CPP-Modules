@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 14:26:10 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/15 23:09:07 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/16 16:02:19 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 Contact::Contact()
 {
+	this->index = 0;
 }
 
 Contact::~Contact()
@@ -29,10 +30,11 @@ std::string	Contact::get_input(std::string str) const
 	{
 		std::cout << str << std::flush;
 		std::getline(std::cin, line);
-		if (std::cin.bad() && line.empty())
+		if (std::cin.fail() && line.empty())
 		{
 			std::cin.clear();
-			printf("Invalid input, try again!\n");
+			std::cin.ignore();
+			std::cout << "Invalid input, try again!" << std::endl;
 		}
 		else
 			break ;
@@ -43,11 +45,11 @@ std::string	Contact::get_input(std::string str) const
 void	Contact::contact_fields(void)
 {
 	std::cin.ignore();
-	this->first_name = this->get_input("First name: \n");
-	this->last_name = this->get_input("Last name: \n");
-	this->nickname = this->get_input("Nickname: \n");
-	this->phone_number = this->get_input("Phone number: \n");
-	this->darkest_secret = this->get_input("Your darkest secret: \n");
+	this->first_name = this->get_input("First name: ");
+	this->last_name = this->get_input("Last name: ");
+	this->nickname = this->get_input("Nickname: ");
+	this->phone_number = this->get_input("Phone number: ");
+	this->darkest_secret = this->get_input("Your darkest secret: ");
 }
 
 void	Contact::atribute_index(int i)
