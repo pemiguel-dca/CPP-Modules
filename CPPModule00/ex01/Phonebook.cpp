@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 18:47:49 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/17 13:01:31 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:24:09 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 Phonebook::Phonebook()
 {
@@ -25,7 +25,7 @@ void	Phonebook::requirements(void) const
 	std::cout << "Welcome to the 80's PhoneBook!" <<std::endl;
 	std::cout << "Here's are the following instructions:" << std::endl;
 	std::cout << "'ADD' -> to add a new contact." << std::endl;
-	std::cout << "'SEARCH' -> displays a specif contact." << std::endl;
+	std::cout << "'SEARCH' -> displays a specific contact." << std::endl;
 	std::cout << "'EXIT' -> exits the program." << std::endl;
 }
 
@@ -46,14 +46,21 @@ int		Phonebook::read_index(void)
 
 	while (true)
 	{
-		std::cout << "Which contact would you like to see? " << std::flush;
+		std::cout << "Which contact would you like to see? ";
 		std::cin >> index;
 		if (std::cin.good() && (index > 0 && index <= 8))
+		{
+			if (index > this->contacts->get_curr_index() + 1)
+				index = -1;
 			break ;
+		}
 		else
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+			clearerr(stdin);
 			std::cout << "Invalid contact, try again." << std::endl;
-		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+		}
 	}
 	return (index);
 }
@@ -68,5 +75,10 @@ void	Phonebook::view_contacts(void) const {
 void	Phonebook::search()
 {
 	int i = this->read_index() - 1;
+	if (i == -2)
+	{
+		std::cout << "Contact not available!" << std::endl;
+		return ;
+	}
 	this->contacts[i].print_contact(i);
 }

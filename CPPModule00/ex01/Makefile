@@ -2,7 +2,7 @@
 #	action
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
-FILES = main.cpp contact.cpp phonebook.cpp
+FILES = main.cpp Contact.cpp Phonebook.cpp
 OBJS = $(FILES:.cpp=.o)
 NAME = gpo
 

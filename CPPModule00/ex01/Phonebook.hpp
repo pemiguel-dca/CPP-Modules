@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 12:48:32 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/16 22:31:07 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/17 14:33:30 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 class Phonebook
 {
@@ -25,7 +25,7 @@ public:
 	void	add_contact();
 	int		read_index();
 	void	search();
-	void    view_contacts(void) const; 
+	void    view_contacts(void) const;
 	Phonebook();
 	~Phonebook();
 };

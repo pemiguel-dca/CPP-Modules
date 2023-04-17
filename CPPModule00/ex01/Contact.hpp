@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 12:51:10 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/16 22:32:39 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:22:18 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <iomanip>
 #include <limits>
+#include <cstdio>
 
 class Contact
 {
@@ -34,6 +35,7 @@ public:
 	void		contact_fields();
 	void		atribute_index(int i);
 	void		view(int index) const;
+	int			get_curr_index();
 	std::string	w_dot(std::string str) const;
 	Contact();
 	~Contact();
