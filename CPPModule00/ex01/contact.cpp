@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 14:26:10 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/16 22:35:25 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:01:38 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ std::string	Contact::get_input(std::string str) const
 		if (std::cin.fail() && line.empty())
 		{
 			std::cin.clear();
-			std::cin.ignore();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
 			std::cout << "Invalid input, try again!" << std::endl;
 		}
 		else

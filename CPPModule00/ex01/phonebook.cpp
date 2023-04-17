@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 18:47:49 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/16 22:32:31 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:01:31 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		Phonebook::read_index(void)
 		else
 			std::cout << "Invalid contact, try again." << std::endl;
 		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');	
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
 	}
 	return (index);
 }
