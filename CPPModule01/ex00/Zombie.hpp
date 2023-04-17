@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:44:08 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/17 18:04:54 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/17 21:39:13 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class	Zombie
 {
 private:
 	std::string	name;
-	void	announce(void);
+	void	announce();
 
 public:
 	Zombie(std::string name);

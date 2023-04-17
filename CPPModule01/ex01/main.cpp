@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 17:50:26 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/17 21:53:40 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/17 21:53:30 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 int main()
 {
-	Zombie *zombie = newZombie("Heap");
-	randomChump("Stack");
+	int	numberZombies = 3;	
+	Zombie *zombie = zombieHorde(numberZombies, "Heap");
+
+	for (int i = 0; i < numberZombies; i++)
+		zombie[i].announce();
 	
-	delete zombie;
+	delete [] zombie;
 	return (0);
 }
