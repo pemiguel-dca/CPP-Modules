@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 12:34:10 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/18 12:55:26 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/18 17:03:07 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class HumanA
 {
 private:
-    std::string	name;
+	std::string	name;
 	Weapon&	weapon;
 public:
 	void	attack() const;

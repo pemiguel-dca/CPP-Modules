@@ -2,9 +2,9 @@
 #	action
 
 FLAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98
-FILES = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+FILES = main.cpp
 OBJS = $(FILES:.cpp=.o)
-NAME = un_violence
+NAME = replace
 
 all : $(NAME)
 
