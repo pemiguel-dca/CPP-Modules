@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 16:15:24 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/21 16:39:05 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/21 21:18:37 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ Point::~Point()
 {
 }
 
-float	Point::getX()
+float	Point::getX() const
 {
 	return(this->x);
 }
 
-float	Point::getY()
+float	Point::getY() const
 {
 	return(this->y);
 }
@@ -42,12 +42,12 @@ void	Point::setY(const float y)
 
 Point&Point::operator = (const Point &other)
 {
-	this->setX(this->getX());
-	this->setX(this->getY());
+	this->setX(other.getX());
+	this->setY(other.getY());
 	return (*this);
 }
 
-Point::Point(Point &other)
+Point::Point(const Point &other)
 {
-
+	*this = other;
 }

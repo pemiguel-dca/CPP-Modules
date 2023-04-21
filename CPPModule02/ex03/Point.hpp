@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 16:00:30 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/21 16:38:31 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/21 21:07:40 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,15 @@ private:
 	float	y;
 public:
 	Point(float x, float y);
-	Point(Point &other);
+	Point(const Point &other);
 	Point &operator = (const Point& other);
-	float	getX();
-	float	getY();
+	float	getX() const;
+	float	getY() const;
 	void	setX(const float x);
 	void	setY(const float y);
 	~Point();
 };
+
+bool    bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif
