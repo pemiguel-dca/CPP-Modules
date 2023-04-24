@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 16:11:43 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/24 14:23:41 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/24 13:43:06 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+
+class ScavTrap : virtual public ClapTrap
 {
 private:
 

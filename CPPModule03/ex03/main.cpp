@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 16:11:43 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/24 14:23:41 by pemiguel         ###   ########.fr       */
+/*   Created: 2023/04/22 13:04:49 by pemiguel          #+#    #+#             */
+/*   Updated: 2023/04/24 15:10:03 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#include "DiamondTrap.hpp"
 
-#include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap
+int main()
 {
-private:
+	DiamondTrap	var("Pedro");
+	DiamondTrap	var2;
 
-public:
-	ScavTrap(std::string name);
-	ScavTrap(const ScavTrap& other);
-	ScavTrap();
-	~ScavTrap();
-	ScavTrap& operator = (const ScavTrap& other);
-	void	guardGate();
-};
-
-#endif
+	var.attack("Someone");
+	var.takeDamage(2);
+	var.beRepaired(5);
+	std::cout << "ClapTrap " << var.getName() << " as "
+				<< var.getHitPoints() << " hitPoints " << std::endl;
+	var.whoAmI();
+}

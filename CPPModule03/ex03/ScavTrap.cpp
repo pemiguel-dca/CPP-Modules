@@ -6,9 +6,11 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 17:20:40 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/24 14:23:08 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/24 14:23:27 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ScavTrap.hpp"
 
 #include "ScavTrap.hpp"
 
@@ -37,6 +39,12 @@ ScavTrap::~ScavTrap()
 /*Copy current ClapTrap object to other*/
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
+	this->name = other.name;
+	this->hitPoints = other.hitPoints;
+	this->energyPoints = other.energyPoints;
+	this->attackDamage = other.attackDamage;
+
+	*this = other;
 	std::cout << "ScavTrap Copy Constructor has been called";
 }
 

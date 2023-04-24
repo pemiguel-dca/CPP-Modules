@@ -6,30 +6,26 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 12:56:47 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/22 17:52:00 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/24 14:18:12 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap() : hitPoints(100), energyPoints(50), attackDamage(20)
+ClapTrap::ClapTrap() : hitPoints(10), energyPoints(10), attackDamage(0)
 {
 	std::cout << "ClapTrap constructor has been called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(100), energyPoints(50), attackDamage(20)
+ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
 	std::cout << "ClapTrap Params constructor has been called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
-	this->name = other.name;
-	this->hitPoints = other.hitPoints;
-	this->energyPoints = other.energyPoints;
-	this->attackDamage = other.attackDamage;
-
+	*this = other;
 	std::cout << "ClapTrap Copy constructor has been called" << std::endl;
 }
 
@@ -46,7 +42,7 @@ ClapTrap& ClapTrap::operator = (const ClapTrap& other)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor has been called" << std::endl;
+	std::cout << "ClapTrap Destructor has been called" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -68,7 +64,6 @@ void	ClapTrap::attack(const std::string& target)
 {
 	if (this->energyPoints > 0 && this->hitPoints > 0)
 	{
-		std::cout << this->hitPoints;
 		std::cout << "ClapTrap " << this->name << " attacks "
 					<< target << ", causing " << this->attackDamage
 					<< " points of damage!" << std::endl;

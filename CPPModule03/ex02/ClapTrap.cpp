@@ -6,16 +6,21 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 12:56:47 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/24 14:18:19 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/24 14:18:03 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 
+ClapTrap::ClapTrap() : hitPoints(10), energyPoints(10), attackDamage(0)
+{
+	std::cout << "ClapTrap constructor has been called" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout << "Default constructor has been called" << std::endl;
+	std::cout << "ClapTrap Params constructor has been called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
@@ -31,13 +36,13 @@ ClapTrap& ClapTrap::operator = (const ClapTrap& other)
 	this->energyPoints = other.energyPoints;
 	this->attackDamage = other.attackDamage;
 
-	std::cout << "Copy assignment operator has been called" << std::endl;
+	std::cout << "ClapTrap Copy assignment operator has been called" << std::endl;
 	return (*this);
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor has been called" << std::endl;
+	std::cout << "ClapTrap Destructor has been called" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -68,7 +73,6 @@ void	ClapTrap::attack(const std::string& target)
 		std::cout << "Can't attack" << std::endl;
 }
 
-
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->energyPoints > 0)
@@ -82,12 +86,12 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "There's no energy points to repair" << std::endl;
 }
 
-int		ClapTrap::getHitPoints()
-{
-	return (this->hitPoints);
-}
-
-std::string		ClapTrap::getName()
+std::string	ClapTrap::getName() const
 {
 	return (this->name);
+}
+
+int		ClapTrap::getHitPoints() const
+{
+	return (this->hitPoints);
 }

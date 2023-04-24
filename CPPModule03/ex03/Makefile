@@ -2,10 +2,10 @@
 #	action
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98
-FILES = main.cpp ScavTrap.cpp ClapTrap.cpp
+FLAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98 -Wshadow
+FILES = main.cpp DiamondTrap.cpp FragTrap.cpp ScavTrap.cpp ClapTrap.cpp
 OBJS = $(FILES:.cpp=.o)
-NAME = scavTrap
+NAME = diamondTrap
 
 all : $(NAME)
 

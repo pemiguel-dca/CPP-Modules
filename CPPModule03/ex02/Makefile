@@ -3,9 +3,9 @@
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98
-FILES = main.cpp ScavTrap.cpp ClapTrap.cpp
+FILES = main.cpp FragTrap.cpp ScavTrap.cpp ClapTrap.cpp
 OBJS = $(FILES:.cpp=.o)
-NAME = scavTrap
+NAME = fragTrap
 
 all : $(NAME)
 
