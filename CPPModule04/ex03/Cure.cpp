@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 16:19:57 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 12:45:52 by pemiguel         ###   ########.fr       */
+/*   Created: 2023/04/25 14:53:54 by pemiguel          #+#    #+#             */
+/*   Updated: 2023/04/25 16:26:16 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#include "Cure.hpp"
 
-#include <iostream>
-#include "Animal.hpp"
-
-class WrongAnimal
+Cure::Cure()
 {
-protected:
-	std::string type;
-public:
-	WrongAnimal();
-	WrongAnimal (const WrongAnimal& other);
-	WrongAnimal& operator = (const WrongAnimal& other);
-	virtual ~WrongAnimal();
-	void	makeSound() const;
-	std::string	getType() const;
-};
+	this->type = "cure";
+}
 
-#endif
+Cure::~Cure()
+{
+}
+
+Cure*	Cure::clone() const
+{
+	return (new Cure());
+}
+
+Cure::Cure(const Cure& other)
+{
+	*this = other;
+}
+
+Cure& Cure::operator = (const Cure& other)
+{
+	AMateria::operator=(other);
+	return (*this);
+}
+
+void	Cure::use(ICharacter& target) const
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}

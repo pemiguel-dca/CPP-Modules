@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 16:19:57 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 12:45:52 by pemiguel         ###   ########.fr       */
+/*   Created: 2023/04/24 15:33:34 by pemiguel          #+#    #+#             */
+/*   Updated: 2023/04/25 13:20:24 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
 
-#include <iostream>
 #include "Animal.hpp"
 
-class WrongAnimal
+/*
+Virtual Destructors
+This makes sure that the correct destructor is called
+when a derived class object is deleted through a pointer to the base class.
+*/
+
+class Dog : public Animal, Brain
 {
-protected:
-	std::string type;
+private:
+	Brain	*brain;
 public:
-	WrongAnimal();
-	WrongAnimal (const WrongAnimal& other);
-	WrongAnimal& operator = (const WrongAnimal& other);
-	virtual ~WrongAnimal();
-	void	makeSound() const;
-	std::string	getType() const;
+	Dog();
+	Dog(const Dog& other);
+	virtual ~Dog();
+	Dog &operator = (const Dog& other);
 };
 
 #endif

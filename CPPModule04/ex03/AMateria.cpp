@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 16:19:57 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 12:45:52 by pemiguel         ###   ########.fr       */
+/*   Created: 2023/04/25 14:22:55 by pemiguel          #+#    #+#             */
+/*   Updated: 2023/04/25 16:18:56 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#include "AMateria.hpp"
 
-#include <iostream>
-#include "Animal.hpp"
-
-class WrongAnimal
+AMateria::AMateria()
 {
-protected:
-	std::string type;
-public:
-	WrongAnimal();
-	WrongAnimal (const WrongAnimal& other);
-	WrongAnimal& operator = (const WrongAnimal& other);
-	virtual ~WrongAnimal();
-	void	makeSound() const;
-	std::string	getType() const;
-};
+}
 
-#endif
+AMateria::~AMateria()
+{
+}
+
+AMateria::AMateria(std::string const& type) : type (type)
+{
+}
+
+AMateria& AMateria::operator = (const AMateria &other)
+{
+	this->type = other.type;
+
+	return (*this);
+}
+
+AMateria::AMateria(const AMateria &other)
+{
+	*this = other;
+}
+
+const std::string& AMateria::getType() const
+{
+	return (this->type);
+}

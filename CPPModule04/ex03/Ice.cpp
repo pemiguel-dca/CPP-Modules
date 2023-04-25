@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 16:19:57 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 12:45:52 by pemiguel         ###   ########.fr       */
+/*   Created: 2023/04/25 14:36:42 by pemiguel          #+#    #+#             */
+/*   Updated: 2023/04/25 16:25:16 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#include "Ice.hpp"
 
-#include <iostream>
-#include "Animal.hpp"
-
-class WrongAnimal
+Ice::Ice()
 {
-protected:
-	std::string type;
-public:
-	WrongAnimal();
-	WrongAnimal (const WrongAnimal& other);
-	WrongAnimal& operator = (const WrongAnimal& other);
-	virtual ~WrongAnimal();
-	void	makeSound() const;
-	std::string	getType() const;
-};
+	this->type = "ice";
+}
 
-#endif
+Ice::~Ice()
+{
+}
+
+Ice*	Ice::clone() const
+{
+	return (new Ice());
+}
+
+Ice::Ice(const Ice& other)
+{
+	*this = other;
+}
+
+Ice& Ice::operator = (const Ice& other)
+{
+	AMateria::operator=(other);
+	return (*this);
+}
+
+void	Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}
