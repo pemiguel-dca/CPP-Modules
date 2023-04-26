@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:10:46 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 16:42:06 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/25 21:44:00 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,30 @@ void	Character::unequip(int idx)
 {
 	if (idx >= 0 && idx <= 3)
 	{
-		if (this->inventory[idx] == )
-
+		if (this->inventory[idx] == NULL)
+			std::cout << "That specific space is already empty" << std::endl;
+		else
+		{
+			//delete [] this->inventory[idx];
+			this->inventory[idx] = NULL;
+			std::cout << "Just unequip equipament " << this->inventory[idx]->getType() 
+						<< " successfully!" << std::endl;
+		}
 	}
 	else
-		std::cout << ""
+		std::cout << "Invalid index" << std::endl;
+}
+
+void	Character::use(int idx, ICharacter& target)
+{
+	if (idx >= 0 && idx <= 3)
+	{
+		if (this->inventory[idx] != NULL)
+			this->inventory[idx]->use(target);
+		else
+			std::cout << "At the moment " << this->name
+						<< " as no equipament is slot number " << idx << std::endl;
+	}
+	else
+		std::cout << "Invalid index" << std::endl;	
 }

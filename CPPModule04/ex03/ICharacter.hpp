@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:06:30 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 16:27:33 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/25 22:57:23 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define ICHARACTER_HPP
 
 #include "AMateria.hpp"
-
+#include <string>
 class ICharacter
 {
 public:

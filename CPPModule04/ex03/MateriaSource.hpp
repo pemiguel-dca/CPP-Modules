@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 14:21:26 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 22:48:27 by pemiguel         ###   ########.fr       */
+/*   Created: 2023/04/25 21:51:52 by pemiguel          #+#    #+#             */
+/*   Updated: 2023/04/25 23:04:41 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-#define AMATERIA_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-#include "ICharacter.hpp"
-#include <iostream>
+#include "IMateriaSource.hpp"
+#include "Character.hpp"
 
-class AMateria
+class MateriaSource : virtual public IMateriaSource
 {
 protected:
-	std::string	type;
+	AMateria	*inventoryAMateria[4];
 public:
-	AMateria();
-	~AMateria();
-	AMateria(const AMateria& other);
-	AMateria& operator = (const AMateria& other);
-	AMateria(std::string const& type);
-	std::string const & getType() const; //Returns the materia type
-	virtual AMateria* clone() const = 0;
-	virtual void use(ICharacter& target);
+	MateriaSource();
+	virtual ~MateriaSource();
+	MateriaSource(const MateriaSource& other);
+	MateriaSource& operator = (const MateriaSource& other);
+	void		learnMateria(AMateria*);
+	AMateria	*createMateria(std::string const& type);
 };
 
 #endif

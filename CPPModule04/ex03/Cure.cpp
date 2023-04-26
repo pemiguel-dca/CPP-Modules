@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 14:53:54 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 16:26:16 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/25 22:36:48 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Cure::~Cure()
 
 Cure*	Cure::clone() const
 {
-	return (new Cure());
+	return (new Cure(*this));
 }
 
 Cure::Cure(const Cure& other)

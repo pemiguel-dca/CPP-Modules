@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 14:22:55 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 22:38:01 by pemiguel         ###   ########.fr       */
+/*   Created: 2023/04/25 21:49:07 by pemiguel          #+#    #+#             */
+/*   Updated: 2023/04/25 21:50:31 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
+
 #include "AMateria.hpp"
 
-AMateria::AMateria()
+class IMateriaSource
 {
-}
+public:
+	virtual ~IMateriaSource() {}
+	virtual void learnMateria(AMateria*) = 0;
+	virtual AMateria* createMateria(std::string const & type) = 0;
+};
 
-AMateria::~AMateria()
-{
-}
-
-AMateria::AMateria(std::string const& type) : type (type)
-{
-}
-
-AMateria& AMateria::operator = (const AMateria &other)
-{
-	this->type = other.type;
-
-	return (*this);
-}
-
-AMateria::AMateria(const AMateria &other)
-{
-	*this = other;
-}
-
-const std::string& AMateria::getType() const
-{
-	return (this->type);
-}
+#endif

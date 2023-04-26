@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 14:36:42 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 16:25:16 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/25 22:37:02 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Ice::~Ice()
 
 Ice*	Ice::clone() const
 {
-	return (new Ice());
+	return (new Ice(*this));
 }
 
 Ice::Ice(const Ice& other)
