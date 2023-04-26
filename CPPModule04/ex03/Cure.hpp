@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 14:52:59 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 16:25:37 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/26 12:44:17 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	Cure(const Cure& other);
 	Cure& operator = (const Cure& other);
 	virtual Cure*	clone() const;
-	virtual void	use(ICharacter& target) const;
+	virtual void	use(ICharacter& target);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:10:46 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 21:44:00 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/26 12:44:38 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	Character::equip(AMateria* m)
 {
 	size_t i = 0;
 
-	for (i; i < 4; i += 1)
+	for (i = 0; i < 4; i += 1)
 	{
 		if (this->inventory[i] == NULL)
 		{
@@ -85,7 +85,7 @@ void	Character::unequip(int idx)
 		{
 			//delete [] this->inventory[idx];
 			this->inventory[idx] = NULL;
-			std::cout << "Just unequip equipament " << this->inventory[idx]->getType() 
+			std::cout << "Just unequip equipament " << this->inventory[idx]->getType()
 						<< " successfully!" << std::endl;
 		}
 	}
@@ -104,5 +104,5 @@ void	Character::use(int idx, ICharacter& target)
 						<< " as no equipament is slot number " << idx << std::endl;
 	}
 	else
-		std::cout << "Invalid index" << std::endl;	
+		std::cout << "Invalid index" << std::endl;
 }

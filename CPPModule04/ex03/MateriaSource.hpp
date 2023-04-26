@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 21:51:52 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 23:04:41 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/26 15:36:57 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ protected:
 	AMateria	*inventoryAMateria[4];
 public:
 	MateriaSource();
-	virtual ~MateriaSource();
+	~MateriaSource();
 	MateriaSource(const MateriaSource& other);
 	MateriaSource& operator = (const MateriaSource& other);
 	void		learnMateria(AMateria*);

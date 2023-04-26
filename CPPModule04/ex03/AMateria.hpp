@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 14:21:26 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 22:48:27 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/26 15:39:00 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ protected:
 	std::string	type;
 public:
 	AMateria();
-	~AMateria();
+	virtual ~AMateria();
 	AMateria(const AMateria& other);
 	AMateria& operator = (const AMateria& other);
 	AMateria(std::string const& type);

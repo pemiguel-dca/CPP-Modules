@@ -6,15 +6,9 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 14:22:10 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 23:03:54 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/26 15:22:13 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "MateriaSource.hpp"
-
-#include "Character.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
 
 #include "MateriaSource.hpp"
 #include "Character.hpp"
@@ -44,9 +38,9 @@ int main()
 
 	delete bob;
 	delete me;
+*/
 	delete src;
 
-*/
 	return 0;
 }
 

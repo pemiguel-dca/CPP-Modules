@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 14:22:55 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 22:38:01 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/26 15:41:50 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,14 @@ AMateria::AMateria(const AMateria &other)
 const std::string& AMateria::getType() const
 {
 	return (this->type);
+}
+
+AMateria* AMateria::clone() const
+{
+	return (AMateria*)this;
+}
+
+void	AMateria::use(ICharacter& target)
+{
+	std::cout << "AMateria " << this->type << " used on " << target.getName() << std::endl;
 }
