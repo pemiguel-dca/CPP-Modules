@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 14:22:10 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/26 15:22:13 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/27 12:24:21 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-/*
+
 	ICharacter* me = new Character(strMe);
 	AMateria* tmp;
 	tmp = src->createMateria(strIce);
@@ -38,7 +38,6 @@ int main()
 
 	delete bob;
 	delete me;
-*/
 	delete src;
 
 	return 0;

@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 21:51:13 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/26 15:36:19 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/27 12:24:12 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ MateriaSource::~MateriaSource()
 {
 	for (size_t i = 0; i < 4; i += 1)
 		if (this->inventoryAMateria[i])
-			delete [] this->inventoryAMateria[i];
+			delete this->inventoryAMateria[i];
 	std::cout << "MateriaSource has been destroyed" << std::endl;
 }
 

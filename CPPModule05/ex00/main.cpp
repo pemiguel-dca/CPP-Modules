@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 12:24:55 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/26 14:58:43 by pemiguel         ###   ########.fr       */
+/*   Created: 2023/04/28 12:26:35 by pemiguel          #+#    #+#             */
+/*   Updated: 2023/04/28 18:49:14 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#include "Bureaucrat.hpp"
 
-#include <iostream>
-
-class Harl
+int main()
 {
-private:
-	void	debug();
-	void	info();
-	void	warning();
-	void	error();
-public:
-	Harl();
-	~Harl();
-	void	complain(std::string level);
-};
-
-/*defining a new datatype*/
-typedef void (Harl::*functions) (void);
-
-#endif
+	try
+	{
+		Bureaucrat	me("pedro", 149);
+		me.incrementGrade();
+		/*Current grade*/
+		std::cout << me;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	return (0);
+}

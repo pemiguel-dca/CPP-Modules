@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:10:46 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/26 12:44:38 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/27 12:24:07 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Character::Character()
 Character::~Character()
 {
 	for (size_t i = 0; i < 4; i += 1)
-		delete [] this->inventory[i];
+		delete this->inventory[i];
 	std::cout << "Character " << this->name << " was destroyed" << std::endl;
 }
 

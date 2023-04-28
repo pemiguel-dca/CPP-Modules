@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 17:28:21 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/19 12:18:08 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/26 14:56:09 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	replace(std::ifstream *file, std::string& file_name, std::string& toFind, s
 		std::ofstream	replace(const_cast<char*>(new_file_replace.c_str()));
 		while (pos != std::string::npos)
 		{
-			std::cout <<  "reading...";
 			content_in_file.erase(pos, toFind.length());
 			content_in_file.insert(pos, toReplace);
 			pos = content_in_file.find(toFind);
