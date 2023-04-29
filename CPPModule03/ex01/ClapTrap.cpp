@@ -6,19 +6,19 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 12:56:47 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/24 14:18:12 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/29 11:45:01 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap() : hitPoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap() : hitPoints(100), energyPoints(50), attackDamage(20)
 {
 	std::cout << "ClapTrap constructor has been called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(100), energyPoints(50), attackDamage(20)
 {
 	std::cout << "ClapTrap Params constructor has been called" << std::endl;
 }

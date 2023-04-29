@@ -6,26 +6,19 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 17:20:40 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/24 14:23:08 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/29 11:54:15 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-/*Since the members of ClapTrap are protected we can modify those values through the class the inherites her*/
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : ClapTrap::ClapTrap()
 {
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
 	std::cout << "ScavTrap Default Constructor has been called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
 	std::cout << "ScavTrap Params Constructor has been called" << std::endl;
 }
 

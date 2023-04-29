@@ -6,19 +6,19 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 12:56:47 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/24 14:18:03 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/29 12:05:47 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap() : hitPoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap() : hitPoints(100), energyPoints(100), attackDamage(30)
 {
 	std::cout << "ClapTrap constructor has been called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(100), energyPoints(100), attackDamage(30)
 {
 	std::cout << "ClapTrap Params constructor has been called" << std::endl;
 }
@@ -58,19 +58,6 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		std::cout << "ClapTrap " << this->name << " got it with "
 					<< amount << " points of damage!" << std::endl;
 	}
-}
-
-void	ClapTrap::attack(const std::string& target)
-{
-	if (this->energyPoints > 0 && this->hitPoints > 0)
-	{
-		std::cout << "ClapTrap " << this->name << " attacks "
-					<< target << ", causing " << this->attackDamage
-					<< " points of damage!" << std::endl;
-		this->energyPoints -= 1;
-	}
-	else
-		std::cout << "Can't attack" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)

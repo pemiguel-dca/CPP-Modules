@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 13:26:53 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/24 15:12:11 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/29 12:25:07 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@ DiamondTrap::DiamondTrap() : FragTrap(), ScavTrap()
 	std::cout << "Diamond Default Constructor has been called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name)
-: ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap(std::string name): ClapTrap(name), FragTrap(name), ScavTrap(name)
 {
 	this->name = name;
-	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::energyPoints;
-	this->attackDamage = FragTrap::attackDamage;
+	this->ClapTrap::name = name + "_clap_name";
+
+	FragTrap::hitPoints = 100;
+	ScavTrap::energyPoints = 50;
+	FragTrap::attackDamage = 30;
 	std::cout << "Diamond Params Constructor has been called" << std::endl;
 }
 

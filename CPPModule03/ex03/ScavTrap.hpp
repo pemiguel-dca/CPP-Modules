@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 16:11:43 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/24 13:43:06 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/29 12:20:36 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	ScavTrap();
 	~ScavTrap();
 	ScavTrap& operator = (const ScavTrap& other);
+	void	attack(const std::string& target);
 	void	guardGate();
 };
 

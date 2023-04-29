@@ -6,14 +6,14 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 12:54:23 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/24 13:18:05 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/29 12:22:14 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <cstdio>
 
-FragTrap::FragTrap()
+FragTrap::FragTrap() : ClapTrap()
 {
 	std::cout << "FragTrap Default Constructor has been called" << std::endl;
 }
@@ -26,6 +26,9 @@ FragTrap::~FragTrap()
 /*Use params constructor of ClapTrap*/
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
 	std::cout << "FragTrap Params Constructor has been called" << std::endl;
 }
 
@@ -42,6 +45,10 @@ FragTrap& FragTrap::operator = (const FragTrap& other)
 	return (*this);
 }
 
+int	FragTrap::getDamage()
+{
+	return (this->attackDamage);
+}
 void	FragTrap::highFiveGuys()
 {
 	std::string	answer;
@@ -56,3 +63,4 @@ void	FragTrap::highFiveGuys()
 	clearerr(stdin);
 	std::cin.clear();
 }
+

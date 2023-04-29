@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 12:54:34 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/24 13:38:29 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/29 12:22:01 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ public:
 	~FragTrap();
 	FragTrap& operator = (const FragTrap& other);
 	void	highFiveGuys();
+	int		getDamage();
 };
 
 

@@ -6,13 +6,12 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 17:20:40 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/24 14:23:20 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/29 11:54:06 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-/*Since the members of ClapTrap are protected we can modify those values through the class the inherites her*/
 ScavTrap::ScavTrap()
 {
 	this->hitPoints = 100;

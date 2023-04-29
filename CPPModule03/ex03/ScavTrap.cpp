@@ -6,20 +6,15 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 17:20:40 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/24 14:23:27 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/29 12:13:35 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "ScavTrap.hpp"
 
 #include "ScavTrap.hpp"
 
 /*Since the members of ClapTrap are protected we can modify those values through the class the inherites her*/
 ScavTrap::ScavTrap()
 {
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
 	std::cout << "ScavTrap Default Constructor has been called" << std::endl;
 }
 
@@ -59,4 +54,17 @@ ScavTrap&ScavTrap::operator = (const ScavTrap& other)
 void	ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+}
+
+void	ScavTrap::attack(const std::string& target)
+{
+	if (this->energyPoints > 0 && this->hitPoints > 0)
+	{
+		std::cout << "ScavTrap " << this->name << " attacks "
+					<< target << ", causing " << this->attackDamage
+					<< " points of damage!" << std::endl;
+		this->energyPoints -= 1;
+	}
+	else
+		std::cout << "Can't attack" << std::endl;
 }
