@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 13:04:49 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/24 13:20:18 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/29 17:40:31 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int main()
 	FragTrap	var("Pedro");
 	FragTrap	var2;
 
-	var.attack("Someone");
 	var.takeDamage(2);
 	var.beRepaired(5);
 

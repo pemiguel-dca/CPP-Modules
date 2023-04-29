@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 12:14:22 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/29 11:47:28 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/29 14:07:31 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
 	ClapTrap& operator = (const ClapTrap& other);
 	std::string		getName() const;
 	int		getHitPoints() const;
-	void	attack(const std::string& target);
+	virtual void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 };
