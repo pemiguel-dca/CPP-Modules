@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 12:31:04 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/29 12:32:35 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/29 22:29:13 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat()
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Default destructor has been called" << std::endl;
+	std::cout << "Bureaucrat Default destructor has been called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade)
@@ -29,19 +29,21 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(gr
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	std::cout << "Params constructor has been called" << std::endl;
+	std::cout << "Bureaucrat Params constructor has been called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other)
 {
 	*this = other;
 
-	std::cout << "Copy constructor has been called" << std::endl;
+	std::cout << "Bureaucrat Copy constructor has been called" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
 	this->grade = other.grade;
+	const_cast<std::string&>(name) = other.name;
+	// The const members cannot be assigned directly, so you need to use a const_cast to remove the 'constness'
 	std::cout << "Copy assignment operator has been called" << std::endl;
 	return (*this);
 }
@@ -80,6 +82,19 @@ void	Bureaucrat::incrementGrade()
 
 std::ostream &operator << (std::ostream& stream, const Bureaucrat& other)
 {
-	stream << other.getName() << ", bureaucrat grade " << other.getGrade() << std::endl;
+	stream << other.getName() << ", bureaucrat grade " << other.getGrade();
 	return (stream);
+}
+
+void	Bureaucrat::signForm(Form& form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->name << " signed " << form.getName() << std::endl;
+	}
+	catch (Form::GradeTooLowException &e)
+	{
+		std::cout << this->name << " coulnd't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
 }

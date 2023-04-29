@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 12:31:04 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/29 12:32:35 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/04/29 21:47:05 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other)
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
 	this->grade = other.grade;
+	const_cast<std::string&>(name) = other.name;
+	// The const members cannot be assigned directly, so you need to use a const_cast to remove the 'constness'
 	std::cout << "Copy assignment operator has been called" << std::endl;
 	return (*this);
 }

@@ -5,7 +5,7 @@ CPP = c++
 FLAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98
 FILES = main.cpp Bureaucrat.cpp Form.cpp
 OBJS = $(FILES:.cpp=.o)
-NAME = bureaucrat
+NAME = form
 
 all : $(NAME)
 
