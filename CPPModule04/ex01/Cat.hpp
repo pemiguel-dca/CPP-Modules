@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 15:41:15 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/25 13:30:34 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/01 12:45:54 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "Animal.hpp"
 
-#define NUM_ANIMALS 20
+#define NUM_ANIMALS 10
 
 class Cat : public Animal, Brain
 {
