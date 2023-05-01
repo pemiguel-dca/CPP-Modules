@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 13:04:20 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/01 16:27:48 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/01 19:02:23 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ public:
 	RobotomyRequestForm(const RobotomyRequestForm& other);
 	RobotomyRequestForm& operator = (const RobotomyRequestForm& other);
 	virtual void executeSpecificForm(const Bureaucrat& executor) const;
-	virtual AForm	*makeForm(std::string name_form, std::string target);
 	~RobotomyRequestForm();
 };
 

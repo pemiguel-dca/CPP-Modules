@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 12:26:35 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/01 17:06:38 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/01 21:20:27 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,19 @@ int main ()
 	b2.executeForm(rr);
 	std::cout << std::endl;
 
+	Intern someRandomIntern;
+	AForm* rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
+	(void)rrf;
+	std::cout << std::endl;
 	try
 	{
 		b1.executeForm(sc);
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << "Exception" << e.what() << std::endl;
+		std::cerr << "Exception: " << e.what() << std::endl;
 	}
 	std::cout << std::endl;
-	return EXIT_SUCCESS;
+	delete rrf; //since Intern::makeForm() returns a AForm*
+	return (0);
 }

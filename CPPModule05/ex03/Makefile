@@ -3,9 +3,9 @@
 
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98
-FILES = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
+FILES = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp Intern.cpp
 OBJS = $(FILES:.cpp=.o)
-NAME = forms
+NAME = intern
 
 all : $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 13:06:12 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/01 16:27:57 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/01 19:02:30 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ public:
 	PresidentialPardonForm(const PresidentialPardonForm& other);
 	PresidentialPardonForm& operator = (const PresidentialPardonForm& other);
 	virtual void executeSpecificForm(const Bureaucrat& executor) const;
-	virtual AForm	*makeForm(std::string name_form, std::string target);
 	~PresidentialPardonForm();
 };
 
