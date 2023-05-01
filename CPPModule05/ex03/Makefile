@@ -1,0 +1,24 @@
+#target: dependencies
+#	action
+
+CPP = c++
+CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98
+FILES = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
+OBJS = $(FILES:.cpp=.o)
+NAME = forms
+
+all : $(NAME)
+
+$(NAME): $(OBJS)
+	c++ $(CPPFLAGS) $(OBJS) -o $(NAME)
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+run: all clean
+	./$(NAME)
+
+re: fclean all
