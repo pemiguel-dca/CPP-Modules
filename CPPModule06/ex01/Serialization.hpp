@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 17:29:07 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/26 17:55:15 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/26 22:15:18 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,18 @@
 
 /*https://www.geeksforgeeks.org/reinterpret_cast-in-c-type-casting-operators/*/
 
-/*Respective:
-It takes a pointer and converts it to the unsigned integer type uintptr_t.
-It takes an unsigned integer parameter and converts it to a pointer to Data.
-*/
+/*In C++ there's no such thing as a static class keyword, the best approach to achieve a similiar
+behaviour by making all members of the class static*/
 
-#include <Data.hpp>
+#include "Data.hpp"
 
 class Serialization
 {
 private:
 	Serialization();
-
 public:
-	uintptr_t serialize(Data* ptr);
-	Data* deserialize(uintptr_t raw);
+	static uintptr_t serialize(Data* ptr);
+	static Data* deserialize(uintptr_t raw);
 	~Serialization();
 };
 

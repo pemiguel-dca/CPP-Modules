@@ -6,15 +6,15 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 17:03:17 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/05 17:28:20 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/26 21:41:48 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DATA_HPP
 #define DATA_HPP
 
-#include <cstdint>
 #include <iostream>
+#include <stdint.h>
 
 /*
 uintptr_t is an unsigned integer type that is capable of storing a data pointer (whether it can hold a function pointer is unspecified). \
@@ -25,11 +25,11 @@ class Data
 {
 private:
 	std::string name;
-	int age;
 public:
-	Data(std::string name, int age);
+	Data(std::string name);
 	Data(const Data& other);
 	Data& operator=(const Data& other);
+	std::string getName();
 	~Data();
 };
 

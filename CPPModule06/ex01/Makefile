@@ -3,14 +3,14 @@
 
 CPP = c++
 CPPFLAGS = -fsanitize=address -std=c++98
-FILES = main.cpp ScalarConverter.cpp Identify.cpp Sto.cpp
+FILES = main.cpp Data.cpp Serialization.cpp
 OBJS = $(FILES:.cpp=.o)
-NAME = scalarConverter
+NAME = serializer
 
 all : $(NAME)
 
 $(NAME): $(OBJS)
-	$(CPP) $(CPPFLAGS) $(FILES) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)
