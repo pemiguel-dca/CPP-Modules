@@ -3,7 +3,7 @@
 
 CPP = c++
 FLAGS = -fsanitize=address -std=c++98
-FILES = main.cpp ScalarConverter.cpp Identify.cpp
+FILES = main.cpp ScalarConverter.cpp Identify.cpp Sto.cpp
 OBJS = $(FILES:.cpp=.o)
 NAME = scalarConverter
 

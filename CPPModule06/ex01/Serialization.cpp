@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serialization.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 12:06:42 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/05 16:10:37 by pemiguel         ###   ########.fr       */
+/*   Created: 2023/05/05 17:30:03 by pemiguel          #+#    #+#             */
+/*   Updated: 2023/05/26 17:58:54 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serialization.hpp"
 
-int main(int argc, char **argv)
+Serialization::Serialization()
 {
-	if (argc == 2)
-	{
-		std::string	sLiteral = argv[1];
-		ScalarConverter::convert(sLiteral);
-	}
-	else
-		std::cerr << "Invalid arguments!" << std::endl;
+}
+
+Serialization::~Serialization()
+{
+}
+
+uintptr_t serialize(Data* ptr)
+{
+	uintptr_t	convert = reinterpret_cast<uintptr_t>(ptr);
+	return (convert);
+}
+
+Data* deserialize(uintptr_t raw)
+{
+	Data	*convert = reinterpret_cast<Data *>(raw);
+	return (convert);
 }

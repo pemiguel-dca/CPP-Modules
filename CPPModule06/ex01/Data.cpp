@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 12:06:42 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/05 16:10:37 by pemiguel         ###   ########.fr       */
+/*   Created: 2023/05/05 17:23:43 by pemiguel          #+#    #+#             */
+/*   Updated: 2023/05/05 17:28:41 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Data.hpp"
 
-int main(int argc, char **argv)
+Data::Data(std::string name, int age) : name(name), age(age)
 {
-	if (argc == 2)
-	{
-		std::string	sLiteral = argv[1];
-		ScalarConverter::convert(sLiteral);
-	}
-	else
-		std::cerr << "Invalid arguments!" << std::endl;
+}
+
+Data::~Data()
+{
+}
+
+Data::Data(const Data& other)
+{
+	*this = other;
+}
+
+Data& Data::operator = (const Data& other)
+{
+	this->name = other.name;
+	this->age = other.age;
+
+	return (*this);
 }

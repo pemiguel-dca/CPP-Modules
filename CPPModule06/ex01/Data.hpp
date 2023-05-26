@@ -1,46 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 11:52:39 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/05 16:04:06 by pemiguel         ###   ########.fr       */
+/*   Created: 2023/05/05 17:03:17 by pemiguel          #+#    #+#             */
+/*   Updated: 2023/05/05 17:28:20 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-#define SCALARCONVERTER_HPP
+#ifndef DATA_HPP
+#define DATA_HPP
 
+#include <cstdint>
 #include <iostream>
-#include <limits>
-#include <sstream>
-#include <typeinfo>
-#include <cstring>
-#include <cmath>
 
-enum types
-{
-	Char,
-	Int,
-	Double,
-	Float,
-	Error,
-	Science,
-};
+/*
+uintptr_t is an unsigned integer type that is capable of storing a data pointer (whether it can hold a function pointer is unspecified). \
+Which typically means that it's the same size as a pointer.
+*/
 
-class ScalarConverter
+class Data
 {
 private:
-	ScalarConverter();
-	~ScalarConverter();
-
+	std::string name;
+	int age;
 public:
-	static void	convert(std::string sLiteral);
+	Data(std::string name, int age);
+	Data(const Data& other);
+	Data& operator=(const Data& other);
+	~Data();
 };
 
-int	cpp11Stoi(std::string sLiteral);
-double	cpp11Stod(std::string sLiteral);
-float	cpp11Stof(std::string sLiteral);
 #endif
