@@ -1,7 +1,7 @@
 #target: dependencies
 #	action
 
-CPP = c++
+CXX = c++
 CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98
 FILES = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
 OBJS = $(FILES:.cpp=.o)
@@ -10,7 +10,7 @@ NAME = forms
 all : $(NAME)
 
 $(NAME): $(OBJS)
-	c++ $(CPPFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)

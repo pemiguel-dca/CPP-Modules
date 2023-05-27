@@ -1,7 +1,7 @@
 #target: dependencies
 #	action
 
-CPP = c++
+CXX = c++
 CPPFLAGS = -fsanitize=address -std=c++98
 FILES = main.cpp ScalarConverter.cpp Identify.cpp Sto.cpp
 OBJS = $(FILES:.cpp=.o)
@@ -10,7 +10,7 @@ NAME = scalarConverter
 all : $(NAME)
 
 $(NAME): $(OBJS)
-	$(CPP) $(CPPFLAGS) $(FILES) -o $(NAME)
+	$(CXX) $(CPPFLAGS) $(FILES) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)

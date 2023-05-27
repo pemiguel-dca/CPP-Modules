@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 17:28:21 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/04/26 14:56:09 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/27 15:17:26 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ std::string	getVar(std::string str)
 	{
 		std::cout << str;
 		getline(std::cin, input);
-		if (!input.empty() || !std::cin.eof())
+		if (!input.empty() || !std::cin.eof() || str[0] != '\n')
 			break ;
 		clearerr(stdin);
 		std::cin.clear();
