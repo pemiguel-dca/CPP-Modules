@@ -5,7 +5,7 @@ CXX = c++
 CPPFLAGS = -fsanitize=address -std=c++98
 FILES = main.cpp
 OBJS = $(FILES:.cpp=.o)
-NAME = iter
+NAME = array
 
 all : $(NAME)
 
