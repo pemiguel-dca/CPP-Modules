@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 20:47:53 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/27 21:52:00 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/28 15:04:58 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <cstring>
+
+/*Templates enable you to write code that can work with different data types without having to rewrite the same logic for each type.
+Overall, the idea is to pass the data type as a parameter so that we don’t need to write the same code for different data types */
 
 /*Ternary operator ->short if/else statment.
 variable = (condition) ? expressionTrue : expressionFalse;*/
