@@ -6,26 +6,55 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 17:42:02 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/28 17:43:37 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/28 23:04:57 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Subject
-Develop a Span class that can store a maximum of N integers. N is an unsigned int
-variable and will be the only parameter passed to the constructor.
-This class will have a member function called addNumber() to add a single number
-to the Span. It will be used in order to fill it. Any attempt to add a new element if there
-are already N elements stored should throw an exception.
-Next, implement two member functions: shortestSpan() and longestSpan()
-They will respectively find out the shortest span or the longest span (or distance, if
-you prefer) between all the numbers stored, and return it. If there are no numbers stored,
-or only one, no span can be found. Thus, throw an exception.
-Of course, you will write your own tests and they will be way more thorough than the
-ones below. Test your Span at least with a minimum of 10 000 numbers. More would be
-even better.
+#ifndef SPAN_HPP
+# define SPAN_HPP
 
-Last but not least, it would be wonderful to fill your Span using a range of iterators.
-Making thousands calls to addNumber() is so annoying. Implement a member function
-to add many numbers to your Span in one call.
+#include <iostream>
+#include <vector>
+#include <exception>
+#include <cstdlib>
+#include <algorithm>
 
-*/
+static inline int max(std::vector<int> vec)
+{
+	return (static_cast<int>(*std::max_element(vec.begin(), vec.end())));
+}
+
+static inline int min(std::vector<int> vec)
+{
+	return (static_cast<int>(*std::min_element(vec.begin(), vec.end())));
+}
+
+static inline bool duplicate(std::vector<int> vec, int random_element)
+{
+	for (std::vector<int>::iterator i = vec.begin(); i != vec.end(); i += 1)
+	{
+		if (random_element == *i)
+			return (true);
+	}
+	return (false);
+}
+
+class Span
+{
+private:
+	std::vector<int> elements;
+	unsigned int n;
+	Span();
+public:
+	Span(unsigned int n);
+	Span(const Span &other);
+	Span &operator = (const Span &other);
+	~Span();
+	void	addNumber(int new_number);
+	int		shortestSpan();
+	int		longestSpan();
+	void	fillContainer();
+	void	printCointaner();
+};
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 17:43:05 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/28 17:43:27 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/28 23:04:07 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,28 @@ int main()
 	sp.addNumber(11);
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
-	return 0;
+	
+	Span new_sp(10);
+	new_sp.fillContainer();
+	new_sp.printCointaner();
+	std::cout << std::endl;
+	try
+	{
+		std::cout << new_sp.shortestSpan() << std::endl;
+	}
+	catch(const std::exception& error)
+	{
+		std::cerr << error.what();
+	}
+	try
+	{
+		std::cout << new_sp.longestSpan() << std::endl;
+	}
+	catch(const std::exception& error)
+	{
+		std::cerr << error.what();
+	}
+	
+	return (0);
 }
 
-/*Excepeted output
-$> ./ex01
-2
-14
-$>*/

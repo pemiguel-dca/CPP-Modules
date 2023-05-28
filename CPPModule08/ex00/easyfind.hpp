@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 15:11:02 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/28 16:00:09 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/28 21:05:12 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	easyfind(T &container, int toFind)
 			throw std::exception();
 		std::cout << "Found " << toFind << " at index: " << std::distance(container.begin(), it) << std::endl;
 	}
-	catch(std::exception &error)
+	catch(const std::exception &error)
 	{
 		std::cerr << "There's no number " << toFind << " in the container" << std::endl;
 	}
