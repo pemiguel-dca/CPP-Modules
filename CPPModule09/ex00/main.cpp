@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:04:47 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/29 17:53:10 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/29 20:48:02 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 
 	btc.setDataBase(db);
 	btc.setInputFile(input_file);
-
+	btc.getExchangeRate();
 	
 	return (0);
 }

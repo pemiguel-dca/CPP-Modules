@@ -47,6 +47,8 @@
 		"ranges": "cpp",
 		"sstream": "cpp",
 		"stdexcept": "cpp",
-		"typeinfo": "cpp"
+		"typeinfo": "cpp",
+		"unordered_set": "cpp",
+		"numbers": "cpp"
 	}
 }
