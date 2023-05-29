@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 13:06:15 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/29 22:45:17 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/30 00:00:10 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,16 @@ BitcoinExchange::~BitcoinExchange()
 void	BitcoinExchange::setDataBase(std::ifstream &db_file)
 {
 	std::string line;
-	while (getline(db_file, line))
-		this->db.push_back(line);
-}
+	std::string	exchange_rate;
+	size_t		comma;
 
-void	BitcoinExchange::setInputFile(std::ifstream &input_file)
-{
-	std::string line;
-	while (getline(input_file, line))
-		this->input_file.push_back(line);
+	getline(db_file, line);//skip time,exchange value line
+	while (getline(db_file, line))
+	{
+		comma = line.find(',');
+		exchange_rate = line.substr(comma + 1);		
+		this->db[line.substr(0, comma)] = Stof(exchange_rate);
+	}
 }
 
 /*
@@ -80,13 +81,11 @@ bool	BitcoinExchange::validateFormat(std::string &line)
 	return (true);
 }
 
-void	BitcoinExchange::getExchangeRate()
+void	BitcoinExchange::getExchangeRate(std::string &line)
 {
-	for (std::vector<std::string>::iterator it = this->input_file.begin(); it != this->input_file.end(); it++)
-	{
-		if (!this->validateFormat(*it))
-			continue ;
-	}
+	if (!this->validateFormat(line))
+		return ;
+	/*Get the exchange rate*/
 }
 
 int	Stoi(std::string sLiteral)

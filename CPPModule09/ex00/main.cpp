@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:04:47 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/29 20:48:02 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/29 23:59:08 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,11 @@ int main(int argc, char **argv)
 		return (1);
 	std::ifstream	db("data.csv");
 	std::ifstream	input_file(argv[1]);
-
+	std::string		line;
+	
 	btc.setDataBase(db);
-	btc.setInputFile(input_file);
-	btc.getExchangeRate();
+	while (getline(input_file, line))
+		btc.getExchangeRate(line);
 	
 	return (0);
 }
