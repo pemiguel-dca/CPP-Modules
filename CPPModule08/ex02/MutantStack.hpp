@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 10:56:12 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/29 12:26:40 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/29 12:38:09 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ MutantStack<T, Container>::~MutantStack()
 template <typename T, class Container>
 MutantStack<T, Container>& MutantStack<T, Container>::operator = (const MutantStack& other)
 {
-	//Call the operator overloading of Container class(std::deque) it self
+	//Call the operator overloading of Container class(std::deque)
 	std::stack<T, Container>::operator = (other);
 	return (*this);
 }
