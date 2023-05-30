@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 13:05:48 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/29 23:59:24 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/30 12:47:10 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,13 @@ private:
 public:
 	BitcoinExchange();
 	~BitcoinExchange();
+	BitcoinExchange(const BitcoinExchange &other);
+	BitcoinExchange& operator = (const BitcoinExchange &other);
 	void	setDataBase(std::ifstream &db_file);
 	bool	validateFormat(std::string &line);
 	void	getExchangeRate(std::string &line);
+	float	getValue(std::string &line);
+	float	getValueTimesExchangeRate(const std::string &date, std::string &line);
 };
 
 int		Stoi(std::string sLiteral);
