@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 13:03:29 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/30 16:23:55 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/30 22:39:52 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,9 @@ public:
 	RPN(const RPN& other);
 	RPN &operator = (const RPN& other);
 	void	handleExpression(std::string &expr);
-	bool	validateExpression(const std::string &expr);
+	bool	validateExpression(std::string &expr);
 };
 
 int		Stoi(std::string sLiteral);
+
 #endif

@@ -49,6 +49,7 @@
 		"stdexcept": "cpp",
 		"typeinfo": "cpp",
 		"unordered_set": "cpp",
-		"numbers": "cpp"
+		"numbers": "cpp",
+		"map": "cpp"
 	}
 }
