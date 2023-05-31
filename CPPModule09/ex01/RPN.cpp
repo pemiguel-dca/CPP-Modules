@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 13:03:53 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/30 23:36:41 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/31 10:10:21 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,19 @@ RPN::RPN(const RPN& other)
 
 RPN& RPN::operator = (const RPN& other)
 {
-	this->expression = other.expression;
+	this->stack = other.stack;
 
 	return (*this);
 }
 
 bool	RPN::validateExpression(std::string &expr)
 {
-	if (expr.find_first_not_of(AVAILABLE_CHARS) != std::string::npos
-		|| expr.find_first_not_of(OPERATORS) == std::string::npos)
+	if (expr.find_first_not_of(AVAILABLE_CHARS) != std::string::npos)
 		return (error_msg(INVALID_CHAR));
 	int	space, operands = 0, operators = 0;
 	std::string	character;
-	expr += ' ';//to read last element since my condition goes until expr.length() > 1
-	/*Validate numbers (< 10) also, because we're using only the four basics operands
+	expr += ' ';//to read last element since my condition goes until expr.length() > 1, this way I can read the last element knowing that expr's last element is useless(space)
+	/*Validate numbers (< 10), also, because we're using only the four basics operands
 	it is safe to say that the number of operands must be one less than the total number of numbers in the expression*/
 	while (expr.length() > 1)
 	{
@@ -61,13 +60,12 @@ bool	RPN::validateExpression(std::string &expr)
 	return (true);
 }
 
-/* " 2 2 4 - +    " res =  */
-void	RPN::handleExpression(std::string &expr)
+void	RPN::handleExpression(std::string expr)
 {
 	std::string expr_rep(expr), element;
 	if (!this->validateExpression(expr_rep))
 		return ;
-	int	space, number = 0, res = 0, top;
+	int	space, res, prev_top;
 	expr += ' ';
 	while (expr.length() > 1)
 	{
@@ -76,53 +74,26 @@ void	RPN::handleExpression(std::string &expr)
 		if (space == 0)
 			space = 1;
 		else if (std::isdigit(element.at(0)))
-		{
-			number += 1;
-			this->expression.push(Stoi(element));
-		}
+			this->stack.push(Stoi(element));
 		else if (element.find_first_not_of(OPERATORS) == std::string::npos)
 		{
-			if (number < 2)
+			if (this->stack.size() < 2)
 			{
 				error_msg(INVALID_FORMAT);
 				return ;
 			}
+			prev_top = this->stack.top();
+			this->stack.pop();
 			if (element.at(0) == '+')
-			{
-				top = this->expression.top();
-				this->expression.pop();
-				res = this->expression.top() + top;
-				this->expression.pop();
-				this->expression.push(res);
-				number -= 1;
-			}
+				res = this->stack.top() + prev_top;
 			else if (element.at(0) == '-')
-			{
-				top = this->expression.top();
-				this->expression.pop();
-				res = this->expression.top() - top;
-				this->expression.pop();
-				this->expression.push(res);
-				number -= 1;
-			}
+				res = this->stack.top() - prev_top;
 			else if (element.at(0) == '*')
-			{
-				top = this->expression.top();
-				this->expression.pop();
-				res = this->expression.top() * top;
-				this->expression.pop();
-				this->expression.push(res);
-				number -= 1;
-			}
+				res = this->stack.top() * prev_top;
 			else if (element.at(0) == '/')
-			{
-				top = this->expression.top();
-				this->expression.pop();
-				res = this->expression.top() / top;
-				this->expression.pop();
-				this->expression.push(res);
-				number -= 1;
-			}
+				res = this->stack.top() / prev_top;
+			this->stack.pop();
+			this->stack.push(res);
 		}
 		expr = expr.substr(space, expr.length());
 	}

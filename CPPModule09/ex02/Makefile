@@ -3,9 +3,9 @@
 
 CXX = c++
 CPPFLAGS = -fsanitize=address -std=c++98
-FILES = main.cpp RPN.cpp
+FILES = main.cpp PmergeMe.cpp
 OBJS = $(FILES:.cpp=.o)
-NAME = RPN
+NAME = PmergeMe
 
 all : $(NAME)
 
@@ -19,6 +19,6 @@ fclean: clean
 	rm -f $(NAME)
 
 run: all clean
-	./$(NAME) "8 9 * 9 - 9 - 9 - 4 - 1 +"
+	./$(NAME)
 
 re: fclean all

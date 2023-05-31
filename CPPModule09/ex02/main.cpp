@@ -5,19 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 13:00:51 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/31 09:51:11 by pemiguel         ###   ########.fr       */
+/*   Created: 2023/05/31 10:24:51 by pemiguel          #+#    #+#             */
+/*   Updated: 2023/05/31 15:03:55 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*"8 9 * 9 - 9 - 9 - 4 - 1 +" === 8 * 9 - 9 - 9 - 9 - 4 + 1*/
+#include "PmergeMe.hpp"
 
-#include "RPN.hpp"
+static bool validateParams(const char **argv)
+{
+	std::string element;
+	for (int i = 0; argv[i]; i += 1)
+	{
+		element = static_cast<const char *>(argv[i]);
+		if (element.find_first_not_of(DIGITS) != std::string::npos)
+			return (error_msg(ARGUMENTS));
+	}
+	return (true);
+}
 
 int main(int argc, char **argv)
 {
-	if (argc != 2)
-		return (error_msg(ARGUMENTS));
-	RPN	rpn;
-	rpn.handleExpression(std::string(argv[1]));
+	argv += 1;
+	if (!validateParams((const char **)argv))
+		return (1);
+	PmergeMe merge;
+	merge.initContainers((const char **)argv);
+	merge.programOutput();
+	return (0);
 }

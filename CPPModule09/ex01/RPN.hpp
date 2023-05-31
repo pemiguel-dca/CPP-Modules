@@ -6,7 +6,7 @@
 /*   By: pemiguel <pemiguel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 13:03:29 by pemiguel          #+#    #+#             */
-/*   Updated: 2023/05/30 22:39:52 by pemiguel         ###   ########.fr       */
+/*   Updated: 2023/05/31 11:27:37 by pemiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,23 @@
 
 static inline bool error_msg(std::string msg)
 {
-	std::cerr << ERROR + msg << std::endl;
+	std::cout << ERROR + msg << std::endl;
 	return (false);
 }
 
 class RPN
 {
 private:
-	std::stack<int> expression;
+	std::stack<int> stack;
 public:
 	RPN();
 	~RPN();
 	RPN(const RPN& other);
 	RPN &operator = (const RPN& other);
-	void	handleExpression(std::string &expr);
+	void	handleExpression(std::string expr);
 	bool	validateExpression(std::string &expr);
 };
 
-int		Stoi(std::string sLiteral);
+int	Stoi(std::string sLiteral);
 
 #endif
